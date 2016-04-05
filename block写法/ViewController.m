@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "block.h"
 @interface ViewController ()
 
 @end
@@ -16,12 +16,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    block *bView = [block new];
+    
+//回调 两种写法
+    //get方法
+    bView.voidBlock = ^(int i){
+        NSLog(@"%d",i);
+    };
+    //set方法
+    [bView setIntBlock:^(int i){
+        return i;
+    }];
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
