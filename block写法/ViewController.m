@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "block.h"
-@interface ViewController ()
+@interface ViewController ()<blockDelegate>
 
 @end
 
@@ -29,15 +29,28 @@
         return i;
     }];
     
+//block写成方法
+    
+    [bView popBlock:^(int i) {
+        
+    }];
+    
+    [bView customBlock:^(int i) {
+        
+    }];
+    
+    [bView returnValue:^int(int i) {
+        return i;
+    }];
     
     
     
-    
-    
+    bView.delegate = self;
     
     
     
 }
+
 
 
 @end

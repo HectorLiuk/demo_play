@@ -10,17 +10,30 @@
 
 @implementation block
 
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
-    return [[self alloc] init];
-}
+
 
 
 //系统block写法
 - (void)popBlock:(void (^)(int i))block{
-    
+    block(5);
 }
 //自定义block
 - (void)customBlock:(voidBlock)block{
     
 }
+// 有返回值的
+- (void)returnValue:(intBlock)block{
+    block(5);
+}
+
+
+
+- (void)add{
+    if ([self.delegate respondsToSelector:@selector(delegateValue:)]) {
+        [self.delegate delegateValue:self];
+    }
+}
+
+
+
 @end

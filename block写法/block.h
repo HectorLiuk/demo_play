@@ -15,6 +15,9 @@ typedef int (^intBlock)(int i);
 //无参数block
 typedef void (^parameterBlock)();
 
+
+@protocol blockDelegate;
+
 @interface block : UIView
 @property (nonatomic, copy) voidBlock voidBlock;
 @property (nonatomic, copy) intBlock intBlock;
@@ -24,5 +27,15 @@ typedef void (^parameterBlock)();
 - (void)popBlock:(void (^)(int i))block;
 //自定义block
 - (void)customBlock:(voidBlock)block;
+// 有返回值的
+- (void)returnValue:(intBlock)block;
+
+//协议
+@property (nonatomic, weak) id<blockDelegate> delegate;
+@end
+
+@protocol blockDelegate <NSObject>
+
+- (void)delegateValue:(block *)block;
 
 @end
