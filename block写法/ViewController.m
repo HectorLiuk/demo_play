@@ -51,6 +51,8 @@
     
 }
 
-
+- (void)delegateValue:(block *)block{
+    
+}
 
 @end
