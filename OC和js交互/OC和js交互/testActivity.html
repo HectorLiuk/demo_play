@@ -19,6 +19,16 @@
     = argument['name'];
   }
   
+  function setupWebViewJavascriptBridge(callback) {
+      if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+      if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+      window.WVJBCallbacks = [callback];
+      var WVJBIframe = document.createElement('iframe');
+      WVJBIframe.style.display = 'none';
+      WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+      document.documentElement.appendChild(WVJBIframe);
+      setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+  }
   </script>
   
 </head>
@@ -30,6 +40,7 @@
 	<input type="button" value="Call ObjC system camera" onclick="OCModel.callSystemCamera()">
 	<input type="button" value="Call ObjC system alert" onclick="OCModel.showAlertMsg('js title', 'js message')">
     <input type="button" value="复制" onclick="OCModel.copyInSystem('A97D7FHLKJ7')">
+    <input type="button" value="bridge三方" onclick="birde()" >
 </div>
 
 <div>

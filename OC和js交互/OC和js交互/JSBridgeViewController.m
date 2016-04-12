@@ -8,17 +8,35 @@
 
 #import "JSBridgeViewController.h"
 #import "WebViewJavascriptBridge.h"
-@interface JSBridgeViewController ()
-
+@interface JSBridgeViewController ()<UIWebViewDelegate>
+@property (nonatomic, strong) UIWebView *webView;
+@property WebViewJavascriptBridge *bridge;
 @end
 
 @implementation JSBridgeViewController
-
+- (UIWebView *)webView{
+    if (!_webView) {
+        _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+        _webView.delegate = self;
+        _webView.scalesPageToFit = YES;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"testActivity" ofType:@"html"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
+        [_webView loadRequest:request];
+    }
+    return _webView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"JSBridge";
+    [self.view addSubview:self.webView];
     
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
+    [_bridge registerHandler:@"birde" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"testObjcCallback called: %@", data);
+        responseCallback(@"Response from testObjcCallback");
+    }];
+
     
     
     
