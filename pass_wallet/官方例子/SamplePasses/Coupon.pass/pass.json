@@ -1,0 +1,109 @@
+{
+  "formatVersion" : 1,
+  "passTypeIdentifier" : "pass.com.apple.devpubs.example",
+  "serialNumber" : "E5982H-I2",
+  "teamIdentifier" : "A93A5CM278",
+  "webServiceURL" : "https://example.com/passes/",
+  "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+  "barcode" : {
+    "message" : "123456789",
+    "format" : "PKBarcodeFormatPDF417",
+    "messageEncoding" : "iso-8859-1"
+  },
+  "locations" : [
+    {
+      "longitude" : -122.3748889,
+      "latitude" : 37.6189722
+    },
+    {
+      "longitude" : -122.03118,
+      "latitude" : 37.33182
+    }
+  ],
+  "organizationName" : "银行",
+  "description" : "Paw Planet Coupon",
+  "logoText" : "Paw Planet",
+  "foregroundColor" : "rgb(255, 255, 255)",
+  "backgroundColor" : "rgb(206, 140, 53)",
+  "coupon" : {
+    "primaryFields" : [
+      {
+        "key" : "wallet测试",
+        "label" : "这是一张优惠券哈哈哈哈",
+        "value" : "SFFSSFSFSFS"
+      }
+    ],
+    "auxiliaryFields" : [
+      {
+        "key" : "expires",
+        "label" : "有效期",
+        "value" : "2013-04-24T10:00-05:00",
+        "isRelative" : true,
+        "dateStyle" : "PKDateStyleShort"
+      }
+    ]
+  }
+  "generic" : {
+    "primaryFields" : [
+      {
+        "key" : "member",
+        "value" : "Johnny Appleseed"
+      }
+    ],
+    "secondaryFields" : [
+      {
+        "key" : "subtitle",
+        "label" : "MEMBER SINCE",
+        "value" : "2012"
+      }
+    ],
+    "auxiliaryFields" : [
+      {
+        "key" : "level",
+        "label" : "LEVEL",
+        "value" : "Platinum"
+      },
+      {
+        "key" : "favorite",
+        "label" : "FAVORITE TOY",
+        "value" : "Bucky Ball Magnets",
+        "textAlignment" : "PKTextAlignmentRight"
+      }
+    ],
+    "backFields" : [
+      {"key":"records","label":"消费记录(最近10次)","value":" 9/23    ￥107.00     无糖冰美式\n 9/21    ￥58.00      黑魔卡\n 8/25    ￥44.00      魔卡\n 8/23    ￥107.00     无糖冰美式\n 8/18    ￥107.00     无糖冰美式\n 7/29    ￥58.00      黑魔卡\n 7/26    ￥44.00      魔卡\n 7/13    ￥58.00      黑魔卡\n 7/11    ￥44.00      魔卡\n 6/20    ￥44.00      魔卡\n"},
+      {
+        "label" : "in Reals",
+        "key" : "currency",
+        "value" : 200,
+        "currencyCode" : "BRL"
+      },
+      {
+        "dateStyle" : "PKDateStyleFull",
+        "label" : "full date",
+        "key" : "dateFull",
+        "value" : "1980-05-07T10:00-05:00"
+      },
+      {
+        "label" : "full time",
+        "key" : "timeFull",
+        "value" : "1980-05-07T10:00-05:00",
+        "timeStyle" : "PKDateStyleFull"
+      },
+      {
+        "dateStyle" : "PKDateStyleShort",
+        "label" : "short date and time",
+        "key" : "dateTime",
+        "value" : "1980-05-07T10:00-05:00",
+        "timeStyle" : "PKDateStyleShort"
+      },
+      {
+        "dateStyle" : "PKDateStyleShort",
+        "label" : "relative date",
+        "key" : "relStyle",
+        "value" : "2013-04-24T10:00-05:00",
+        "isRelative" : true
+      }
+    ]
+  }
+}
