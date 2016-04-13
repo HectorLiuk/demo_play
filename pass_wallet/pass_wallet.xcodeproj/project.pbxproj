@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4AE2457E1CBE1EF100864A0E /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE2457D1CBE1EF100864A0E /* 111.png */; };
 		4AE245811CBE2B3B00864A0E /* FileChangeDir.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE245801CBE2B3B00864A0E /* FileChangeDir.m */; };
+		4AE245831CBE418900864A0E /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE245821CBE418900864A0E /* 222.png */; };
 		4AEDF32E1CBB84B6005CA309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEDF32D1CBB84B6005CA309 /* main.m */; };
 		4AEDF3311CBB84B6005CA309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEDF3301CBB84B6005CA309 /* AppDelegate.m */; };
 		4AEDF3341CBB84B6005CA309 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEDF3331CBB84B6005CA309 /* ViewController.m */; };
@@ -41,6 +42,7 @@
 		4AE2457D1CBE1EF100864A0E /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
 		4AE2457F1CBE2B3B00864A0E /* FileChangeDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileChangeDir.h; sourceTree = "<group>"; };
 		4AE245801CBE2B3B00864A0E /* FileChangeDir.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileChangeDir.m; sourceTree = "<group>"; };
+		4AE245821CBE418900864A0E /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
 		4AEDF3291CBB84B6005CA309 /* pass_wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pass_wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AEDF32D1CBB84B6005CA309 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AEDF32F1CBB84B6005CA309 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				4AEDF3351CBB84B6005CA309 /* Main.storyboard */,
 				4AEDF3381CBB84B6005CA309 /* Assets.xcassets */,
 				4AE2457D1CBE1EF100864A0E /* 111.png */,
+				4AE245821CBE418900864A0E /* 222.png */,
 				4AEDF33A1CBB84B6005CA309 /* LaunchScreen.storyboard */,
 				4AEDF33D1CBB84B6005CA309 /* Info.plist */,
 				4AEDF32C1CBB84B6005CA309 /* Supporting Files */,
@@ -254,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE245831CBE418900864A0E /* 222.png in Resources */,
 				4AEDF33C1CBB84B6005CA309 /* LaunchScreen.storyboard in Resources */,
 				4AEDF3391CBB84B6005CA309 /* Assets.xcassets in Resources */,
 				4AEDF3701CBB8EF3005CA309 /* pass.pkpass in Resources */,
