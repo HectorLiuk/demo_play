@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4AE2452E1CBC970100864A0E"
-               BuildableName = "OC&#x548c;js&#x4ea4;&#x4e92;.app"
-               BlueprintName = "OC&#x548c;js&#x4ea4;&#x4e92;"
-               ReferencedContainer = "container:OC&#x548c;js&#x4ea4;&#x4e92;.xcodeproj">
+               BlueprintIdentifier = "2CEB3EBA1602563600548120"
+               BuildableName = "ExampleApp-iOS.app"
+               BlueprintName = "ExampleApp-iOS"
+               ReferencedContainer = "container:ExampleApp-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4AE245471CBC970100864A0E"
-               BuildableName = "OC&#x548c;js&#x4ea4;&#x4e92;Tests.xctest"
-               BlueprintName = "OC&#x548c;js&#x4ea4;&#x4e92;Tests"
-               ReferencedContainer = "container:OC&#x548c;js&#x4ea4;&#x4e92;.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4AE245521CBC970100864A0E"
-               BuildableName = "OC&#x548c;js&#x4ea4;&#x4e92;UITests.xctest"
-               BlueprintName = "OC&#x548c;js&#x4ea4;&#x4e92;UITests"
-               ReferencedContainer = "container:OC&#x548c;js&#x4ea4;&#x4e92;.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4AE2452E1CBC970100864A0E"
-            BuildableName = "OC&#x548c;js&#x4ea4;&#x4e92;.app"
-            BlueprintName = "OC&#x548c;js&#x4ea4;&#x4e92;"
-            ReferencedContainer = "container:OC&#x548c;js&#x4ea4;&#x4e92;.xcodeproj">
+            BlueprintIdentifier = "2CEB3EBA1602563600548120"
+            BuildableName = "ExampleApp-iOS.app"
+            BlueprintName = "ExampleApp-iOS"
+            ReferencedContainer = "container:ExampleApp-iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4AE2452E1CBC970100864A0E"
-            BuildableName = "OC&#x548c;js&#x4ea4;&#x4e92;.app"
-            BlueprintName = "OC&#x548c;js&#x4ea4;&#x4e92;"
-            ReferencedContainer = "container:OC&#x548c;js&#x4ea4;&#x4e92;.xcodeproj">
+            BlueprintIdentifier = "2CEB3EBA1602563600548120"
+            BuildableName = "ExampleApp-iOS.app"
+            BlueprintName = "ExampleApp-iOS"
+            ReferencedContainer = "container:ExampleApp-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4AE2452E1CBC970100864A0E"
-            BuildableName = "OC&#x548c;js&#x4ea4;&#x4e92;.app"
-            BlueprintName = "OC&#x548c;js&#x4ea4;&#x4e92;"
-            ReferencedContainer = "container:OC&#x548c;js&#x4ea4;&#x4e92;.xcodeproj">
+            BlueprintIdentifier = "2CEB3EBA1602563600548120"
+            BuildableName = "ExampleApp-iOS.app"
+            BlueprintName = "ExampleApp-iOS"
+            ReferencedContainer = "container:ExampleApp-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

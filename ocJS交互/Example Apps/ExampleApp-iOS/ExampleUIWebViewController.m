@@ -14,7 +14,7 @@
 @end
 
 @implementation ExampleUIWebViewController
-
+//http://www.henishuo.com/webviewjavascriptbridge-detail-use/
 - (void)viewWillAppear:(BOOL)animated {
     if (_bridge) { return; }
     
@@ -30,15 +30,23 @@
     
 
     
-//    [_bridge registerHandler:@"testObjcCallback" handler:^(id data, WVJBResponseCallback responseCallback) {
-////        NSLog(@"testObjcCallback called: %@", data);
+    [_bridge registerHandler:@"testObjcCallback" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"js调用oc方法: %@", data);
 //        responseCallback(@"Response from testObjcCallback");
-//    }];
+    }];
     
 //    [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
     
     [self renderButtons:webView];
     [self loadExamplePage:webView];
+}
+- (void)callHandler:(id)sender {
+    id data = @{ @"这是oc方法": @"Hi 这里是oc调用js" };
+    //oc调用js方法  执行js方法在回调给oc
+    [_bridge callHandler:@"testJavascriptHandler" data:data responseCallback:^(id response) {
+        NSLog(@"testJavascriptHandler responded: %@", response);
+        NSLog(@"回调回来的是一个json %@",response[@"我是js"]);
+    }];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -67,21 +75,15 @@
     reloadButton.titleLabel.font = font;
 }
 
-- (void)callHandler:(id)sender {
-    id data = @{ @"这是oc方法": @"Hi 这里是oc调用js" };
-    [_bridge callHandler:@"testJavascriptHandler" data:data responseCallback:^(id response) {
-        NSLog(@"testJavascriptHandler responded: %@", response);
-    }];
-}
 
 - (void)loadExamplePage:(UIWebView*)webView {
-//    NSString* htmlPath = [[NSBundle mainBundle] pathForResource:@"ExampleApp" ofType:@"html"];
-//    NSString* appHtml = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
-//    NSURL *baseURL = [NSURL fileURLWithPath:htmlPath];
-//    [webView loadHTMLString:appHtml baseURL:baseURL];
-    NSURL *url = [NSURL URLWithString:@"https://www.github.com"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:request];
+    NSString* htmlPath = [[NSBundle mainBundle] pathForResource:@"ExampleApp" ofType:@"html"];
+    NSString* appHtml = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+    NSURL *baseURL = [NSURL fileURLWithPath:htmlPath];
+    [webView loadHTMLString:appHtml baseURL:baseURL];
+//    NSURL *url = [NSURL URLWithString:@"https://www.github.com"];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [webView loadRequest:request];
     
 }
 @end
