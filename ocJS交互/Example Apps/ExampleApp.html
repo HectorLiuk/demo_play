@@ -39,11 +39,12 @@
 			else { log.appendChild(el) }
 		}
 
+		//在js注册此方法  oc调用通过callHandler调用
 		bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
-			log('oc调用js 并且传值过来', data)
+			log('oc调用js 并且传值过来 传过来的值', data)
 			var responseData = { '我是js':'我是js回调给oc的!' }
 			// log('这是js  回调给oc', responseData)
-			responseCallback(responseData)
+			responseCallback(responseData)//回调回oc
 		})
 
 		document.body.appendChild(document.createElement('br'))
@@ -53,7 +54,7 @@
 		callbackButton.onclick = function(e) {
 			e.preventDefault()
 			log('JS calling handler "testObjcCallback"')
-			bridge.callHandler('testObjcCallback', {'foo': 'bar'}, function(response) {
+			bridge.callHandler('js调用oc', {'foo': 'bar'}, function(response) {
 				log('JS got response', response)
 			})
 		}
