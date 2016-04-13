@@ -10,7 +10,7 @@
 
 @interface FileChangeDir()
 @property (nonatomic, strong) NSFileManager *filemanage;
-@property (nonatomic, copy) NSString *docsdir;
+@property (nonatomic, copy, readwrite) NSString *docsdir;
 @end
 
 
@@ -64,21 +64,13 @@
 //创建pass.json文件
 - (void)creatPassJsonData:(NSData *)data{
     NSString *dbpath = [self.docsdir stringByAppendingPathComponent:@"pass.json"];
-//    NSString *str = @"我是json数据";
-//    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
     [self.filemanage createFileAtPath:dbpath contents:data attributes:nil];
 }
 //复制图片到文件夹下
 - (void)copyImageToPass:(NSString *)imageNamePng{
-    //调动复制方法必须 在设置toPath 文件详细地址
+    //调用复制方法必须 在设置toPath 文件详细地址
     NSString *photoPath=[[NSBundle mainBundle] pathForResource:imageNamePng ofType:@"png"];
-    BOOL sucess =[self.filemanage copyItemAtPath:photoPath toPath:[NSString stringWithFormat:@"%@/%@.png",self.docsdir,imageNamePng] error:NULL];
-    if (sucess) {
-        NSLog(@"复制图片成功");
-    }else{
-        NSLog(@"复制图片失败");
-    }
-
+   [self.filemanage copyItemAtPath:photoPath toPath:[NSString stringWithFormat:@"%@/%@.png",self.docsdir,imageNamePng] error:NULL];
 }
 - (void)deleteDir{
     [self.filemanage removeItemAtPath:self.docsdir error:NULL];
