@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>测试IOS与JS之前的互调</title>
+	<style type="text/css">
+	  * {
+	  	font-size: 40px;
+	  }
+	</style>
+  <script type="text/javascript">
+
+  var jsFunc = function() {
+    alert('Objective-C call js to show alert');
+  }
+  
+  var jsParamFunc = function(argument) {
+    document.getElementById('jsParamFuncSpan').innerHTML
+    = argument['name'];
+  }
+  
+  function setupWebViewJavascriptBridge(callback) {
+      if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+      if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+      window.WVJBCallbacks = [callback];
+      var WVJBIframe = document.createElement('iframe');
+      WVJBIframe.style.display = 'none';
+      WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+      document.documentElement.appendChild(WVJBIframe);
+      setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+  }
+  </script>
+  
+</head>
+
+<body>
+  
+<div style="margin-top: 100px">
+	<h1>Test how to use objective-c call js</h1>
+	<input type="button" value="Call ObjC system camera" onclick="OCModel.callSystemCamera()">
+	<input type="button" value="Call ObjC system alert" onclick="OCModel.showAlertMsg('js title', 'js message')">
+    <input type="button" value="复制" onclick="OCModel.copyInSystem('A97D7FHLKJ7')">
+    <input type="button" value="bridge三方" onclick="birde()" >
+</div>
+
+<div>
+	<input type="button" value="Call ObjC func with JSON " onclick="OCModel.shareWithDict({'url': 'http://www.baidu.com', 'icon': 'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png', 'title': '百度一下，一下下', 'content': '全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。百度超过千亿的中文网页数据库，可以瞬间找到相关的搜索结果。'})">
+	<input type="button" value="Call ObjC func with JSON and ObjC call js func to pass args." onclick="OCModel.jsCallObjcAndObjcCallJsWithDict({'name': 'testname', 'age': 10, 'height': 170})">
+</div>
+
+<div>
+	<span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
+</div>
+
+
+</body>
+</html>
