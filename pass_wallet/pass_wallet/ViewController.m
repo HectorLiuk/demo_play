@@ -65,14 +65,11 @@
 - (IBAction)becomeDir:(id)sender {
     NSString *str = @"我是json数据";
     NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *array = @[@"111",@"222"];
-    
+    NSArray *array = @[@"111",@"222",@"333"];
     FileChangeDir *file = [FileChangeDir fileDir];
-    
     [file creatDirData:data images:array blockPath:^(NSString * path) {
         NSLog(@"parh:%@",path);
         //打包pkpass方法
-
     }];
     [file deleteDir];
 

@@ -69,7 +69,9 @@
 //复制图片到文件夹下
 - (void)copyImageToPass:(NSString *)imageNamePng{
     //调用复制方法必须 在设置toPath 文件详细地址
-    NSString *photoPath=[[NSBundle mainBundle] pathForResource:imageNamePng ofType:@"png"];
+//    NSString *photoPath=[[NSBundle mainBundle] pathForResource:@"Assets.xcassets" ofType:NULL];
+//    photoPath = [photoPath stringByAppendingString:@"monkey"];
+     NSString *photoPath=[[NSBundle mainBundle] pathForResource:imageNamePng ofType:@"png"];
    [self.filemanage copyItemAtPath:photoPath toPath:[NSString stringWithFormat:@"%@/%@.png",self.docsdir,imageNamePng] error:NULL];
 }
 - (void)deleteDir{
