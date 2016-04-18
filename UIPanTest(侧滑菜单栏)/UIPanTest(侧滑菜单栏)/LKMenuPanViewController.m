@@ -36,7 +36,7 @@ static NSString *const cellID = @"cell_id";
 }
 - (NSArray *)viewControllers{
     if (!_viewControllers) {
-        _viewControllers = @[@"TestViewController",@"OneViewController",@"TwoViewController",@"111",@"11"];
+        _viewControllers = [NSArray array];
     }
     return _viewControllers;
 }
@@ -61,10 +61,6 @@ static NSString *const cellID = @"cell_id";
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture:)];
     [self.contentDetailView addGestureRecognizer:panGesture];
-    
-    //添加第一个默认页面
-    //    [self.contentDetailView addSubview:self.redVC.view];
-    //    [self addChildViewController:self.redVC];
     
 }
 
@@ -138,6 +134,8 @@ static NSString *const cellID = @"cell_id";
     
 }
 - (void)customViewWithClassName:(NSInteger)currentView{
+//两种创建方式
+    //1 类名创建
     UIViewController *vc = nil;
     NSString *vcName = self.viewControllers[currentView];
     
@@ -149,7 +147,7 @@ static NSString *const cellID = @"cell_id";
     }
     [self.contentDetailView addSubview:vc.view];
     
-    //选中页面
+    //2 alloc创建
     //    switch (sender.tag - tagBtn) {
     //        case 0:
     //            [self.contentDetailView addSubview:self.redVC.view];
