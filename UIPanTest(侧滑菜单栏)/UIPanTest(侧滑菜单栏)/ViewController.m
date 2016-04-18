@@ -19,29 +19,38 @@ static NSString *const cellID = @"cell_id";
 @property (nonatomic, assign) NSIndexPath *lastIndex;
 
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSMutableDictionary *VCdic;
 @end
 
 @implementation ViewController
 - (UITableView *)menuTableView{
     if (!_menuTableView) {
-        _menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, 400) style:UITableViewStylePlain];
+        _menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, self.view.height) style:UITableViewStylePlain];
         _menuTableView.delegate = self;
         _menuTableView.dataSource = self;
+        _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _menuTableView.tableFooterView = [[UIView alloc] init];
     }
     return _menuTableView;
 }
 - (UIView *)contentDetailView{
     if (!_contentDetailView) {
         _contentDetailView = [[UIView alloc] initWithFrame:CGRectMake(100, 0, self.view.width, self.view.frame.size.height)];
-        _contentDetailView.backgroundColor = [UIColor whiteColor];
+        _contentDetailView.backgroundColor = [UIColor clearColor];
     }
     return _contentDetailView;
 }
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"222",@"111"];
+        _dataArray = @[@"222",@"111",@"11",@"111",@"11"];
     }
     return _dataArray;
+}
+- (NSMutableDictionary *)VCdic{
+    if (!_VCdic) {
+        _VCdic = [NSMutableDictionary dictionary];
+    }
+    return _VCdic;
 }
 
 
@@ -72,9 +81,10 @@ static NSString *const cellID = @"cell_id";
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture:)];
     [self.contentDetailView addGestureRecognizer:panGesture];
-
-    [self.contentDetailView addSubview:self.redVC.view];
-    [self addChildViewController:self.redVC];
+    
+    //添加第一个默认页面
+//    [self.contentDetailView addSubview:self.redVC.view];
+//    [self addChildViewController:self.redVC];
     
 }
 
@@ -111,7 +121,6 @@ static NSString *const cellID = @"cell_id";
     
     UIButton *iconBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     
-    
     [iconBtn setBackgroundImage:[UIImage imageNamed:@"222"] forState:UIControlStateNormal];
     [iconBtn setBackgroundImage:[UIImage imageNamed:@"111"] forState:UIControlStateSelected];
     
@@ -122,7 +131,6 @@ static NSString *const cellID = @"cell_id";
     [cell.contentView addSubview:iconBtn];
     
     if (indexPath.row == 0) {
-//        cell.backgroundColor = [UIColor redColor];
         iconBtn.selected = YES;
         self.lastIndex = indexPath;
     }else{
@@ -132,67 +140,90 @@ static NSString *const cellID = @"cell_id";
     return cell;
 }
 - (void)menuClick:(UIButton *)sender{
+    //设置单选效果
     UITableViewCell *lastCell = [self.menuTableView cellForRowAtIndexPath:self.lastIndex];
     UIButton *lastBtn = [lastCell viewWithTag:self.lastIndex.row +tagBtn];
     if (sender.isSelected == NO) {
         lastBtn.selected = NO;
     }
     sender.selected = YES;
+    NSInteger currentView = sender.tag-tagBtn;
 
-    switch (sender.tag - tagBtn) {
-        case 0:
-            [self.contentDetailView addSubview:self.redVC.view];
-            [self addChildViewController:self.redVC];
-            break;
-        case 1:
-            [self.contentDetailView addSubview:self.blackVC.view];
-            [self addChildViewController:self.blackVC];
-            break;
-        default:
-            break;
+    
+    self.lastIndex = [NSIndexPath indexPathForRow:currentView inSection:0];
+
+    //选中页面
+//    switch (sender.tag - tagBtn) {
+//        case 0:
+//            [self.contentDetailView addSubview:self.redVC.view];
+//            [self addChildViewController:self.redVC];
+//            break;
+//        case 1:
+//            [self.contentDetailView addSubview:self.blackVC.view];
+//            [self addChildViewController:self.blackVC];
+//            break;
+//        case 2:{
+//            Class viewControllerClass = NSClassFromString(@"TestViewController");
+//
+//            UIViewController *vc = [[viewControllerClass alloc] init];
+//            [self.contentDetailView addSubview:vc.view];
+//            [self addChildViewController:vc];
+//
+//        
+//        }break;
+//        default:
+//            break;
+//    }
+    
+    UIViewController *vc = nil;
+    
+    
+    if ([[self.VCdic allKeys] containsObject:self.dataArray[currentView]] ) {
+        vc = self.VCdic[self.dataArray[currentView]];
+    }else{
+        vc = [self creatViewController:self.dataArray[currentView]];
     }
-
+    [self.contentDetailView addSubview:vc.view];
     
     
     
     
 }
 
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];//选中后的反显颜色即刻消失
-
-    UITableViewCell *lastCell = [tableView cellForRowAtIndexPath:self.lastIndex];
-    lastCell.backgroundColor = [UIColor whiteColor];
+- (UIViewController *)creatViewController:(NSString *)className{
+    Class VCClass = NSClassFromString(className);
+    UIViewController *vc = [[VCClass alloc] init];
     
-    UITableViewCell *cell = [tableView  cellForRowAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
-    self.lastIndex = indexPath;
-
-   
-    
-#warning 添加一个控制器菜单栏 就多出来了
-    switch (indexPath.row) {
-        case 0:
-                [self.contentDetailView addSubview:self.redVC.view];
-                [self addChildViewController:self.redVC];
-            break;
-        case 1:
-            [self.contentDetailView addSubview:self.blackVC.view];
-            [self addChildViewController:self.blackVC];
-            break;
-        default:
-            break;
-    }
-    
-    
-    
-
-    
-    
+    return vc;
     
 }
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];//选中后的反显颜色即刻消失
+//
+//    UITableViewCell *lastCell = [tableView cellForRowAtIndexPath:self.lastIndex];
+//    lastCell.backgroundColor = [UIColor whiteColor];
+//    
+//    UITableViewCell *cell = [tableView  cellForRowAtIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor redColor];
+//    self.lastIndex = indexPath;
+//
+//   
+//    
+//#warning 添加一个控制器菜单栏 就多出来了
+//    switch (indexPath.row) {
+//        case 0:
+//                [self.contentDetailView addSubview:self.redVC.view];
+//                [self addChildViewController:self.redVC];
+//            break;
+//        case 1:
+//            [self.contentDetailView addSubview:self.blackVC.view];
+//            [self addChildViewController:self.blackVC];
+//            break;
+//        default:
+//            break;
+//    }
+//}
 
 
 

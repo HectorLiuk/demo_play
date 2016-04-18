@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = self.color;
+    self.view.backgroundColor = [UIColor cyanColor];
+
+//    self.view.backgroundColor = self.color;
     
 
 }
