@@ -17,8 +17,14 @@
 		4A10D10F1CC4C5C900C4A6CE /* UIPanTest_______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10D10E1CC4C5C900C4A6CE /* UIPanTest_______UITests.m */; };
 		4A10D11E1CC4C7F600C4A6CE /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10D11D1CC4C7F600C4A6CE /* UIView+Extension.m */; };
 		4A10D1211CC4CA5A00C4A6CE /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10D1201CC4CA5A00C4A6CE /* TestViewController.m */; };
-		4A10D1231CC4E56700C4A6CE /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A10D1221CC4E56700C4A6CE /* 222.png */; };
+		4A10D1231CC4E56700C4A6CE /* 111highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A10D1221CC4E56700C4A6CE /* 111highlight.png */; };
 		4A10D1251CC4E93400C4A6CE /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A10D1241CC4E93400C4A6CE /* 111.png */; };
+		A33C7C411CC52F6100D741CE /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33C7C401CC52F6100D741CE /* MeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A36315A21CC521A5008DFA15 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A36315A01CC521A5008DFA15 /* OneViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A36315A31CC521A5008DFA15 /* OneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A36315A11CC521A5008DFA15 /* OneViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A36315A71CC522D2008DFA15 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A36315A51CC522D2008DFA15 /* TwoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A36315A81CC522D2008DFA15 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A36315A61CC522D2008DFA15 /* TwoViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A36315AE1CC52C5A008DFA15 /* LKMenuPanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A36315AD1CC52C5A008DFA15 /* LKMenuPanViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +65,18 @@
 		4A10D11D1CC4C7F600C4A6CE /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		4A10D11F1CC4CA5A00C4A6CE /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		4A10D1201CC4CA5A00C4A6CE /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		4A10D1221CC4E56700C4A6CE /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
+		4A10D1221CC4E56700C4A6CE /* 111highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111highlight.png; sourceTree = "<group>"; };
 		4A10D1241CC4E93400C4A6CE /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
+		A33C7C3F1CC52F6100D741CE /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		A33C7C401CC52F6100D741CE /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		A363159F1CC521A5008DFA15 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		A36315A01CC521A5008DFA15 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		A36315A11CC521A5008DFA15 /* OneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneViewController.xib; sourceTree = "<group>"; };
+		A36315A41CC522D2008DFA15 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		A36315A51CC522D2008DFA15 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		A36315A61CC522D2008DFA15 /* TwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
+		A36315AC1CC52C5A008DFA15 /* LKMenuPanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKMenuPanViewController.h; sourceTree = "<group>"; };
+		A36315AD1CC52C5A008DFA15 /* LKMenuPanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKMenuPanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,16 +127,26 @@
 		4A10D0E81CC4C5C900C4A6CE /* UIPanTest(侧滑菜单栏) */ = {
 			isa = PBXGroup;
 			children = (
-				4A10D1221CC4E56700C4A6CE /* 222.png */,
+				4A10D1221CC4E56700C4A6CE /* 111highlight.png */,
 				4A10D1241CC4E93400C4A6CE /* 111.png */,
 				4A10D11C1CC4C7F600C4A6CE /* UIView+Extension.h */,
 				4A10D11D1CC4C7F600C4A6CE /* UIView+Extension.m */,
 				4A10D0EC1CC4C5C900C4A6CE /* AppDelegate.h */,
 				4A10D0ED1CC4C5C900C4A6CE /* AppDelegate.m */,
+				A33C7C3F1CC52F6100D741CE /* MeViewController.h */,
+				A33C7C401CC52F6100D741CE /* MeViewController.m */,
+				A36315AC1CC52C5A008DFA15 /* LKMenuPanViewController.h */,
+				A36315AD1CC52C5A008DFA15 /* LKMenuPanViewController.m */,
 				4A10D0EF1CC4C5C900C4A6CE /* ViewController.h */,
 				4A10D0F01CC4C5C900C4A6CE /* ViewController.m */,
 				4A10D11F1CC4CA5A00C4A6CE /* TestViewController.h */,
 				4A10D1201CC4CA5A00C4A6CE /* TestViewController.m */,
+				A363159F1CC521A5008DFA15 /* OneViewController.h */,
+				A36315A01CC521A5008DFA15 /* OneViewController.m */,
+				A36315A11CC521A5008DFA15 /* OneViewController.xib */,
+				A36315A41CC522D2008DFA15 /* TwoViewController.h */,
+				A36315A51CC522D2008DFA15 /* TwoViewController.m */,
+				A36315A61CC522D2008DFA15 /* TwoViewController.xib */,
 				4A10D0F21CC4C5C900C4A6CE /* Main.storyboard */,
 				4A10D0F51CC4C5C900C4A6CE /* Assets.xcassets */,
 				4A10D0F71CC4C5C900C4A6CE /* LaunchScreen.storyboard */,
@@ -259,11 +285,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A10D1231CC4E56700C4A6CE /* 222.png in Resources */,
+				4A10D1231CC4E56700C4A6CE /* 111highlight.png in Resources */,
 				4A10D0F91CC4C5C900C4A6CE /* LaunchScreen.storyboard in Resources */,
 				4A10D0F61CC4C5C900C4A6CE /* Assets.xcassets in Resources */,
 				4A10D1251CC4E93400C4A6CE /* 111.png in Resources */,
 				4A10D0F41CC4C5C900C4A6CE /* Main.storyboard in Resources */,
+				A36315A31CC521A5008DFA15 /* OneViewController.xib in Resources */,
+				A36315A81CC522D2008DFA15 /* TwoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,9 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33C7C411CC52F6100D741CE /* MeViewController.m in Sources */,
+				A36315A71CC522D2008DFA15 /* TwoViewController.m in Sources */,
 				4A10D0F11CC4C5C900C4A6CE /* ViewController.m in Sources */,
+				A36315AE1CC52C5A008DFA15 /* LKMenuPanViewController.m in Sources */,
 				4A10D0EE1CC4C5C900C4A6CE /* AppDelegate.m in Sources */,
 				4A10D11E1CC4C7F600C4A6CE /* UIView+Extension.m in Sources */,
+				A36315A21CC521A5008DFA15 /* OneViewController.m in Sources */,
 				4A10D0EB1CC4C5C900C4A6CE /* main.m in Sources */,
 				4A10D1211CC4CA5A00C4A6CE /* TestViewController.m in Sources */,
 			);
@@ -434,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "UIPanTest(侧滑菜单栏)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lk.UIPanTest-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,6 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "UIPanTest(侧滑菜单栏)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lk.UIPanTest-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +552,7 @@
 				4A10D1151CC4C5C900C4A6CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A10D1161CC4C5C900C4A6CE /* Build configuration list for PBXNativeTarget "UIPanTest(侧滑菜单栏)Tests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +561,7 @@
 				4A10D1181CC4C5C900C4A6CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A10D1191CC4C5C900C4A6CE /* Build configuration list for PBXNativeTarget "UIPanTest(侧滑菜单栏)UITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +570,7 @@
 				4A10D11B1CC4C5C900C4A6CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

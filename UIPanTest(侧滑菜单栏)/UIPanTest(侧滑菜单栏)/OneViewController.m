@@ -1,26 +1,25 @@
 //
-//  TestViewController.m
+//  OneViewController.m
 //  UIPanTest(侧滑菜单栏)
 //
-//  Created by lk on 16/4/18.
+//  Created by pht on 16/4/18.
 //  Copyright © 2016年 LK. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "OneViewController.h"
 
-@interface TestViewController ()
+@interface OneViewController ()
 
 @end
 
-@implementation TestViewController
+@implementation OneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-
-//    self.view.backgroundColor = self.color;
-    
-
+    // Do any additional setup after loading the view from its nib.
+}
+- (IBAction)redBtnClick:(id)sender {
+    self.view.backgroundColor = [UIColor yellowColor];
 }
 
 - (void)didReceiveMemoryWarning {

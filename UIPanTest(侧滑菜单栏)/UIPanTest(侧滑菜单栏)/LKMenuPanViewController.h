@@ -1,18 +1,17 @@
 //
-//  ViewController.h
+//  LKMenuPanViewController.h
 //  UIPanTest(侧滑菜单栏)
 //
-//  Created by lk on 16/4/18.
+//  Created by pht on 16/4/18.
 //  Copyright © 2016年 LK. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LKMenuPanViewController : UIViewController
 @property (nonatomic, strong) UITableView *menuTableView;
 @property (nonatomic, strong) UIView *contentDetailView;
-@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *viewControllers;
+@property (nonatomic, strong) NSArray *btnImages;
 - (void)customViewWithClassName:(NSInteger)currentView;
 @end
-

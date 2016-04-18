@@ -1,22 +1,22 @@
 //
-//  ViewController.m
+//  LKMenuPanViewController.m
 //  UIPanTest(侧滑菜单栏)
 //
-//  Created by lk on 16/4/18.
+//  Created by pht on 16/4/18.
 //  Copyright © 2016年 LK. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LKMenuPanViewController.h"
 #import "UIView+Extension.h"
 static NSString *const cellID = @"cell_id";
 #define tagBtn 2020
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface LKMenuPanViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, assign) NSIndexPath *lastIndex;
 
 @property (nonatomic, strong) NSMutableDictionary *VCdic;
 @end
 
-@implementation ViewController
+@implementation LKMenuPanViewController
 - (UITableView *)menuTableView{
     if (!_menuTableView) {
         _menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, self.view.height) style:UITableViewStylePlain];
@@ -30,15 +30,15 @@ static NSString *const cellID = @"cell_id";
 - (UIView *)contentDetailView{
     if (!_contentDetailView) {
         _contentDetailView = [[UIView alloc] initWithFrame:CGRectMake(100, 0, self.view.width, self.view.frame.size.height)];
-//        _contentDetailView.backgroundColor = [UIColor clearColor];
+        //        _contentDetailView.backgroundColor = [UIColor clearColor];
     }
     return _contentDetailView;
 }
-- (NSArray *)dataArray{
-    if (!_dataArray) {
-        _dataArray = @[@"TestViewController",@"OneViewController",@"TwoViewController",@"111",@"11"];
+- (NSArray *)viewControllers{
+    if (!_viewControllers) {
+        _viewControllers = @[@"TestViewController",@"OneViewController",@"TwoViewController",@"111",@"11"];
     }
-    return _dataArray;
+    return _viewControllers;
 }
 - (NSMutableDictionary *)VCdic{
     if (!_VCdic) {
@@ -46,7 +46,12 @@ static NSString *const cellID = @"cell_id";
     }
     return _VCdic;
 }
-
+- (NSArray *)btnImages{
+    if (!_btnImages) {
+        _btnImages = [NSArray array];
+    }
+    return _btnImages;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -58,8 +63,8 @@ static NSString *const cellID = @"cell_id";
     [self.contentDetailView addGestureRecognizer:panGesture];
     
     //添加第一个默认页面
-//    [self.contentDetailView addSubview:self.redVC.view];
-//    [self addChildViewController:self.redVC];
+    //    [self.contentDetailView addSubview:self.redVC.view];
+    //    [self addChildViewController:self.redVC];
     
 }
 
@@ -67,7 +72,7 @@ static NSString *const cellID = @"cell_id";
 -(void)panGesture:(UIPanGestureRecognizer *)sender{
     [UIView animateWithDuration:0.2 animations:^{
         CGPoint point = [sender translationInView:self.view];
-    
+        
         if (point.x>0){
             self.menuTableView.x = 0;
             self.contentDetailView.x =self.menuTableView.width;
@@ -79,7 +84,7 @@ static NSString *const cellID = @"cell_id";
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    return self.viewControllers.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -93,16 +98,18 @@ static NSString *const cellID = @"cell_id";
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    
     UIButton *iconBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     
-    [iconBtn setBackgroundImage:[UIImage imageNamed:@"222"] forState:UIControlStateNormal];
-    [iconBtn setBackgroundImage:[UIImage imageNamed:@"111"] forState:UIControlStateSelected];
+    NSString *imagPath = self.btnImages[indexPath.row];
+    [iconBtn setBackgroundImage:[UIImage imageNamed:imagPath] forState:UIControlStateNormal];
     
+    [iconBtn setBackgroundImage:[UIImage imageNamed:    [imagPath stringByAppendingString:@"highlight"]] forState:UIControlStateHighlighted];
+    
+    [iconBtn setBackgroundImage:[UIImage imageNamed:    [imagPath stringByAppendingString:@"highlight"]] forState:UIControlStateSelected];
     iconBtn.tag = tagBtn+indexPath.row;
     
-    [iconBtn addTarget:self action:@selector(menuClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    [iconBtn addTarget:self action:@selector(menuClick:) forControlEvents:UIControlEventTouchUpInside];
     [cell.contentView addSubview:iconBtn];
     
     if (indexPath.row == 0) {
@@ -132,7 +139,7 @@ static NSString *const cellID = @"cell_id";
 }
 - (void)customViewWithClassName:(NSInteger)currentView{
     UIViewController *vc = nil;
-    NSString *vcName = self.dataArray[currentView];
+    NSString *vcName = self.viewControllers[currentView];
     
     if ([[self.VCdic allKeys] containsObject:vcName] ) {
         vc = self.VCdic[vcName];
@@ -173,9 +180,6 @@ static NSString *const cellID = @"cell_id";
     return vc;
     
 }
-
-
-
 
 
 @end

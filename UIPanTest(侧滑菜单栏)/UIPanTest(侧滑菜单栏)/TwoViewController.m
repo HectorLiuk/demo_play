@@ -1,26 +1,22 @@
 //
-//  TestViewController.m
+//  TwoViewController.m
 //  UIPanTest(侧滑菜单栏)
 //
-//  Created by lk on 16/4/18.
+//  Created by pht on 16/4/18.
 //  Copyright © 2016年 LK. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "TwoViewController.h"
 
-@interface TestViewController ()
+@interface TwoViewController ()
 
 @end
 
-@implementation TestViewController
+@implementation TwoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-
-//    self.view.backgroundColor = self.color;
-    
-
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
