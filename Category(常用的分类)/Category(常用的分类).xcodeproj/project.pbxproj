@@ -51,6 +51,7 @@
 		A33C7C6F1CC68A6300D741CE /* Category(常用的分类)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Category(常用的分类)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33C7C731CC68A6300D741CE /* Category_______UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Category_______UITests.m"; sourceTree = "<group>"; };
 		A33C7C751CC68A6300D741CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A34786141CC68C75006E20AE /* MacroDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +145,7 @@
 		A33C7C811CC68A7800D741CE /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A34786141CC68C75006E20AE /* MacroDefinition.h */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -504,6 +506,7 @@
 				A33C7C7A1CC68A6300D741CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A33C7C7B1CC68A6300D741CE /* Build configuration list for PBXNativeTarget "Category(常用的分类)Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +515,7 @@
 				A33C7C7D1CC68A6300D741CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A33C7C7E1CC68A6300D741CE /* Build configuration list for PBXNativeTarget "Category(常用的分类)UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +524,7 @@
 				A33C7C801CC68A6300D741CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
