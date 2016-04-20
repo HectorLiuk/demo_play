@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIView *contentDetailView;
 @property (nonatomic, strong) NSArray *viewControllers;
 @property (nonatomic, strong) NSArray *btnImages;
+@property (nonatomic, strong) NSArray *titles;
 /**
  *  重写此方法
  */

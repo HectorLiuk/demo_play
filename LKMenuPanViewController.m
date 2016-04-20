@@ -9,13 +9,15 @@
 #import "LKMenuPanViewController.h"
 #import "UIView+Extension.h"
 static NSString *const cellID = @"cell_id";
-#define tagBtn 2020
+//#define tagBtn 2020
 @interface LKMenuPanViewController ()<UITableViewDelegate,UITableViewDataSource>{
-    
+    int _tagBtn;
 }
 @property (nonatomic, strong) NSIndexPath *lastIndex;
 
 @property (nonatomic, strong) NSMutableDictionary *VCdic;
+
+@property (nonatomic, strong) NSMutableArray *arraySelected;
 @end
 
 @implementation LKMenuPanViewController
@@ -31,8 +33,8 @@ static NSString *const cellID = @"cell_id";
 }
 - (UIView *)contentDetailView{
     if (!_contentDetailView) {
-        _contentDetailView = [[UIView alloc] initWithFrame:CGRectMake(80, 0, self.view.width, self.view.frame.size.height)];
-        //        _contentDetailView.backgroundColor = [UIColor clearColor];
+        _contentDetailView = [[UIView alloc] initWithFrame:CGRectMake(80, 0, self.view.width, SCREEN_HEIGHT-kNavigationBarHeight-kStatusBarHeight)];
+        _contentDetailView.backgroundColor = [UIColor blueColor];
     }
     return _contentDetailView;
 }
@@ -54,12 +56,33 @@ static NSString *const cellID = @"cell_id";
     }
     return _btnImages;
 }
+- (NSArray *)titles{
+    if (!_titles) {
+        _titles = [NSArray array];
+    }
+    return _titles;
+}
+- (NSMutableArray *)arraySelected{
+    if (!_arraySelected) {
+        _arraySelected = [NSMutableArray array];
+        for (int i = 0; i< self.btnImages.count; i++) {
+            if (i == 0) {
+                [ _arraySelected addObject:@1];
+            }
+            [_arraySelected addObject:@0];
+        }
+        
+    }
+    
+    return _arraySelected;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    _tagBtn = 2020;
     UIView *grayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, self.view.height)];
-    grayView.backgroundColor  = [UIColor redColor];
+    grayView.backgroundColor  = HEX(@"#efefef");
     [self.view addSubview:grayView];
     [grayView addSubview:self.menuTableView];
     [self.view addSubview:self.contentDetailView];
@@ -76,16 +99,16 @@ static NSString *const cellID = @"cell_id";
         
         if (point.x>0){
             self.menuTableView.x = 0;
-            self.contentDetailView.x =self.menuTableView.width;
+            self.contentDetailView.x =80;
         }else{
-            self.menuTableView.x= 0 - self.menuTableView.x;
+            self.menuTableView.x= 0 ;
             self.contentDetailView.x = 0;
         }
     }];
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.viewControllers.count;
+    return self.btnImages.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -99,40 +122,61 @@ static NSString *const cellID = @"cell_id";
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    UIButton *iconBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 69)];
+    UIButton *iconBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
     
     NSString *imagPath = self.btnImages[indexPath.row];
-    [iconBtn setBackgroundImage:[UIImage imageNamed:imagPath] forState:UIControlStateNormal];
+    iconBtn = [self customBtn:iconBtn imageStr:imagPath str:self.titles[indexPath.row]];
     
-    [iconBtn setBackgroundImage:[UIImage imageNamed:    [imagPath stringByAppendingString:@"highlight"]] forState:UIControlStateHighlighted];
     
-    [iconBtn setBackgroundImage:[UIImage imageNamed:    [imagPath stringByAppendingString:@"highlight"]] forState:UIControlStateSelected];
-    iconBtn.tag = tagBtn+indexPath.row;
+    iconBtn.tag = _tagBtn + indexPath.row;
     
     
     [iconBtn addTarget:self action:@selector(menuClick:) forControlEvents:UIControlEventTouchUpInside];
     [cell.contentView addSubview:iconBtn];
     
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(5, 69, 60, 1)];
+    lineView.backgroundColor = HEX(@"#efefef");
+    [cell.contentView addSubview:lineView];
+    
+    
     if (indexPath.row == 0) {
         iconBtn.selected = YES;
         self.lastIndex = indexPath;
-        [self menuClick:iconBtn];
+        if (!_arraySelected) {
+            [self menuClick:iconBtn];
+
+        }
     }else{
         iconBtn.selected = NO;
     }
     
+    iconBtn.selected = self.arraySelected[indexPath.row];
+
+    
+    
+    
     return cell;
 }
 - (void)menuClick:(UIButton *)sender{
+    
+    
     //设置单选效果
-    NSLog(@"index%@",self.lastIndex);
     UITableViewCell *lastCell = [self.menuTableView cellForRowAtIndexPath:self.lastIndex];
-    UIButton *lastBtn = (UIButton *)[lastCell viewWithTag:self.lastIndex.row +tagBtn];
+    UIButton *lastBtn = (UIButton *)[lastCell viewWithTag:self.lastIndex.row +_tagBtn];
     if (sender.isSelected == NO) {
         lastBtn.selected = NO;
     }
     sender.selected = YES;
-    NSInteger currentView = sender.tag-tagBtn;
+    
+    
+    NSInteger currentView = sender.tag- _tagBtn;
+    //取消选中
+    [self.arraySelected setObject:@0 atIndexedSubscript:self.lastIndex.row];
+    //选中
+    [self.arraySelected setObject:@1 atIndexedSubscript:currentView];
+
+    
     //记录点击button
     self.lastIndex = [NSIndexPath indexPathForRow:currentView inSection:0];
     
@@ -179,11 +223,61 @@ static NSString *const cellID = @"cell_id";
 }
 - (UIViewController *)creatViewController:(NSString *)className{
     Class VCClass = NSClassFromString(className);
-    UIViewController *vc = [[VCClass alloc] init];
+    PDBaseViewController *vc = [[VCClass alloc] init];
     [self addChildViewController:vc];
     return vc;
     
 }
-
+-(UIButton *)customBtn:(UIButton *)customBtn imageStr:(NSString *)imageStr str:(NSString *)titlestr{
+    
+    //设置button标题
+    [customBtn setTitle:titlestr forState:UIControlStateNormal];
+    [customBtn setTitleColor:[UIColor colorWithHEX:@"#505050"] forState:UIControlStateNormal];
+    [customBtn setTitleColor:HEX(@"#ffffff") forState:UIControlStateSelected];
+    customBtn.titleLabel.font = FONT(13);
+    
+    //设置button 图片
+    [customBtn setImage:[UIImage imageNamed:[imageStr stringByAppendingString:@"_default"]] forState:UIControlStateNormal];
+    [customBtn setImage:[UIImage imageNamed:[imageStr stringByAppendingString:@"_pressed"]] forState:UIControlStateSelected];
+    [customBtn setBackgroundImage:[self createImageWithColor:HEX(@"#d42721")] forState:UIControlStateSelected];
+    //title与button 上下间距
+    CGFloat space = 4;
+    
+    CGFloat imageWidth = customBtn.imageView.frame.size.width;
+    CGFloat imageHeight = customBtn.imageView.frame.size.height;
+    
+    CGFloat labelWidth = 0.0;
+    CGFloat labelHeight = 0.0;
+    
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0) {
+        // 由于iOS8中titleLabel的size为0，用下面的这种设置
+        labelWidth = customBtn.titleLabel.intrinsicContentSize.width;
+        labelHeight = customBtn.titleLabel.intrinsicContentSize.height;
+    } else {
+        labelWidth = customBtn.titleLabel.frame.size.width;
+        labelHeight = customBtn.titleLabel.frame.size.height;
+    }
+    
+    UIEdgeInsets imageEdgeInsets = UIEdgeInsetsZero;
+    UIEdgeInsets labelEdgeInsets = UIEdgeInsetsZero;
+    
+    //3.图片在上，文字在下
+    imageEdgeInsets = UIEdgeInsetsMake(-labelHeight-space/2.0, 0, 0, -labelWidth);
+    labelEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, -imageHeight-space/2.0, 0);
+    customBtn.titleEdgeInsets = labelEdgeInsets;
+    customBtn.imageEdgeInsets = imageEdgeInsets;
+    return customBtn;
+}
+- (UIImage *)createImageWithColor:(UIColor*)color
+{
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
 
 @end
