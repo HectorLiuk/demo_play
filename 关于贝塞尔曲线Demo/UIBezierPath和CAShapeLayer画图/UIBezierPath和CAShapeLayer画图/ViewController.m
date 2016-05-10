@@ -99,7 +99,8 @@ typedef NS_OPTIONS(NSInteger, AnimationType){
      param: ArcCenter 圆心  radius 半径 startAngle/endAngle 开始结束角度 clockwise 是否闭合曲线
      角度问题见该项目目录的图
      */
-    UIBezierPath *path2 = [UIBezierPath bezierPathWithArcCenter:CGPointMake(280, 60) radius:50 startAngle:0 endAngle:M_PI clockwise:NO];
+    //画曲线  0代表起点（0右边开始） M_PI代表（180）  画圆逆时针绘制
+    UIBezierPath *path2 = [UIBezierPath bezierPathWithArcCenter:CGPointMake(280, 60) radius:50 startAngle:M_PI endAngle:M_PI*2 clockwise:NO];
     layer2.path = path2.CGPath;
     layer2.fillColor = [UIColor clearColor].CGColor;
     layer2.strokeColor = [UIColor blueColor].CGColor;
