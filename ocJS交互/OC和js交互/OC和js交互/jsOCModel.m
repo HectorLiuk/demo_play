@@ -8,6 +8,9 @@
 
 #import "jsOCModel.h"
 
+#warning 此方法callWithArguments  如果卸载block中 崩溃  请使用stringByEvaluatingJavaScriptFromString方法
+
+
 @implementation jsOCModel
 - (void)callWithDict:(NSDictionary *)params {
     NSLog(@"Js调用了OC的方法，参数为：%@", params);
@@ -16,6 +19,7 @@
 // Js调用了callSystemCamera
 - (void)callSystemCamera{
     NSLog(@"JS调用了OC的方法，调起系统相册");
+//    stringByEvaluatingJavaScriptFromString
     
     // JS调用后OC后，又通过OC调用JS，但是这个是没有传参数的
     JSValue *jsFunc = self.jsContext[@"jsFunc"];
