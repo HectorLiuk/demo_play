@@ -12,11 +12,13 @@
 
   var jsFunc = function() {
     alert('Objective-C call js to show alert');
+    return 2;
   }
   
   var jsParamFunc = function(argument) {
     document.getElementById('jsParamFuncSpan').innerHTML
     = argument['name'];
+    return 1;
   }
   
   function setupWebViewJavascriptBridge(callback) {

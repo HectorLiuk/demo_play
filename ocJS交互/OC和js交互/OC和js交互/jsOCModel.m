@@ -30,10 +30,13 @@
     NSLog(@"jsCallObjcAndObjcCallJsWithDict was called, params is %@", params);
     
     // 调用JS的方法
-    JSValue *jsParamFunc = self.jsContext[@"jsParamFunc"];
-    [jsParamFunc callWithArguments:@[@{@"age": @10, @"name": @"lili", @"height": @158}]];
+//    JSValue *jsParamFunc = self.jsContext[@"jsParamFunc"];
+//    [jsParamFunc callWithArguments:@[@{@"age": @10, @"name": @"lili", @"height": @158}]];
+    [self.webView stringByEvaluatingJavaScriptFromString:@"jsFunc()"];
+    NSLog(@"%@",[self.webView stringByEvaluatingJavaScriptFromString:@"jsFunc()"]);
+    
 }
-
+//多参数传值 js方法使用驼峰命名法
 - (void)showAlert:(NSString *)title msg:(NSString *)msg{
     NSLog(@"调用oc的showAlert");
     dispatch_async(dispatch_get_main_queue(), ^{
