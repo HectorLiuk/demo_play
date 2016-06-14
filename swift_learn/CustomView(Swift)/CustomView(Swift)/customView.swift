@@ -8,10 +8,17 @@
 
 import UIKit
 /// 自定义swift控件
+@IBDesignable
 class customView: UIView {
 
     @IBOutlet weak var sureBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBInspectable var title: String = ""{
+        didSet{
+            titleLabel.text = title
+        }
+    }
     
     //block
     var operationBlock: ((str:String) -> Void)?

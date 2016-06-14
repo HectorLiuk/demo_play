@@ -16,6 +16,7 @@
 		4A15A5CD1D0E8D1000A70322 /* CustomView_Swift_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A15A5CC1D0E8D1000A70322 /* CustomView_Swift_UITests.swift */; };
 		4A15A5DB1D0E8E3700A70322 /* customView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A15A5DA1D0E8E3700A70322 /* customView.swift */; };
 		4A15A5DD1D0E8E6200A70322 /* customView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A15A5DC1D0E8E6200A70322 /* customView.xib */; };
+		4A15A5DF1D0FA94900A70322 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A15A5DE1D0FA94900A70322 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4A15A5CE1D0E8D1000A70322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A15A5DA1D0E8E3700A70322 /* customView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customView.swift; sourceTree = "<group>"; };
 		4A15A5DC1D0E8E6200A70322 /* customView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = customView.xib; sourceTree = "<group>"; };
+		4A15A5DE1D0FA94900A70322 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				4A15A5AC1D0E8D1000A70322 /* AppDelegate.swift */,
 				4A15A5AE1D0E8D1000A70322 /* ViewController.swift */,
+				4A15A5DE1D0FA94900A70322 /* TestViewController.swift */,
 				4A15A5DA1D0E8E3700A70322 /* customView.swift */,
 				4A15A5DC1D0E8E6200A70322 /* customView.xib */,
 				4A15A5B01D0E8D1000A70322 /* Main.storyboard */,
@@ -265,6 +268,7 @@
 			files = (
 				4A15A5AF1D0E8D1000A70322 /* ViewController.swift in Sources */,
 				4A15A5DB1D0E8E3700A70322 /* customView.swift in Sources */,
+				4A15A5DF1D0FA94900A70322 /* TestViewController.swift in Sources */,
 				4A15A5AD1D0E8D1000A70322 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +496,7 @@
 				4A15A5D31D0E8D1000A70322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A15A5D41D0E8D1000A70322 /* Build configuration list for PBXNativeTarget "CustomView(Swift)Tests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +505,7 @@
 				4A15A5D61D0E8D1000A70322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A15A5D71D0E8D1000A70322 /* Build configuration list for PBXNativeTarget "CustomView(Swift)UITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +514,7 @@
 				4A15A5D91D0E8D1000A70322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

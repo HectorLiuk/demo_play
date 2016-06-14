@@ -16,32 +16,33 @@ class ViewController: UIViewController {
         let backImageView = customView()
         return backImageView
     }()
-    let i:Int
+    let i:Int = 0
+    
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(backImageView)
+//        view.addSubview(backImageView)
         UIView.animateWithDuration(10) { () -> Void in
             
         }
-        
         backImageView.operationBlock = {(str) -> Void in
-            
             let oo = Int()
-            
-            
             print(String(oo)+"11111"+str)
-            
-
-
             print(self,self.view,oo)
             
         }
-//
-        //使用正常创建控件
+
+//        //使用正常创建控件
 //        let ImageView = customView.init(frame: CGRectMake(10, 300, 300, 200))
+//        
 //        view.addSubview(ImageView)
+        
+        
+        
+        
+        
+        
         
     }
 
