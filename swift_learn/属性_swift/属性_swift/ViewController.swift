@@ -26,7 +26,7 @@ class students: NSObject{
         }
     }
     
-    
+
     
 }
 
@@ -41,7 +41,8 @@ class ViewController: UIViewController {
     var cat = "ssss"
     var car: String?
     
-    
+    let possibleString: String? = "An optional string."
+
     
     //不能按照下面的书写
 //    var nilStr: String? 404
@@ -92,7 +93,21 @@ class ViewController: UIViewController {
 //        使用!来获取一个不存在的可选值会导致运行时错误。使用!来强制解析值之前，一定要确定可选包含一个非nil的值。
         
         
-   
+        
+        if let actualNumber = Int("123") {
+            print("\'\("123")\' has an integer value of \(actualNumber)")
+        } else {
+            print("\'\("123")\' could not be converted to an integer")
+        }
+        // 输出 "'123' has an integer value of 123"
+        
+       
+        
+        
+        
+    }
+    func canThrowAnError() throws {
+        // 这个函数有可能抛出错误
     }
 
     override func didReceiveMemoryWarning() {
