@@ -40,6 +40,11 @@ class ViewController: UIViewController {
 
     var cat = "ssss"
     var car: String?
+    
+    
+    
+    //不能按照下面的书写
+//    var nilStr: String? 404
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +73,13 @@ class ViewController: UIViewController {
         if cat == "ssss"{
             
         }
+        
+//        注意：
+//        Swift 的nil和 Objective-C 中的nil并不一样。在 Objective-C 中，nil是一个指向不存在对象的指针。在 Swift 中，nil不是指针——它是一个确定的值，用来表示值缺失。任何类型的可选状态都可以被设置为nil，不只是对象类型。
+        var serverResponseCode: Int? = 404
+        // serverResponseCode 包含一个可选的 Int 值 404
+        serverResponseCode = nil
+        // serverResponseCode 现在不包含值
    
     }
 
