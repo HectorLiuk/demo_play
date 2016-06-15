@@ -11,6 +11,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var array = []
+    
+    
+    
     //懒加载创建控件
     private lazy var backImageView: customView = {
         let backImageView = customView()
@@ -40,8 +44,7 @@ class ViewController: UIViewController {
         
         
         
-        
-        
+        TestViewController.someTypeMethod()
         
         
     }

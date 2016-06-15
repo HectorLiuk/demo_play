@@ -9,7 +9,10 @@
 import UIKit
 
 class TestViewController: UIViewController {
-
+    //类方法
+    class func someTypeMethod() {
+        // type method implementation goes here
+    }
    
     
     override func viewDidLoad() {

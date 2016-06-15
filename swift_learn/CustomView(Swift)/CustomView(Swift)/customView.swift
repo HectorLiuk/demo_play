@@ -65,6 +65,7 @@ class customView: UIView {
     }
     
     
+    
     @IBAction func sureClick(sender: AnyObject) {
         removeCurrentView()
         if operationBlock != nil {
