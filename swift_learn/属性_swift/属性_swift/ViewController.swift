@@ -80,6 +80,18 @@ class ViewController: UIViewController {
         // serverResponseCode 包含一个可选的 Int 值 404
         serverResponseCode = nil
         // serverResponseCode 现在不包含值
+        
+        
+        
+//判断空
+        if car != nil {
+            print("convertedNumber has an integer value of \(car!).")
+        }
+        // 输出 "convertedNumber has an integer value of 123."
+//        注意：
+//        使用!来获取一个不存在的可选值会导致运行时错误。使用!来强制解析值之前，一定要确定可选包含一个非nil的值。
+        
+        
    
     }
 
