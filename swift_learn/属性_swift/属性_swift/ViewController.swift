@@ -26,7 +26,11 @@ class students: NSObject{
         }
     }
     
-
+    
+    
+    
+    
+    
     
 }
 
@@ -102,7 +106,7 @@ class ViewController: UIViewController {
         // 输出 "'123' has an integer value of 123"
         
        
-        
+//        let label = UILabel.init(frame: CGRectMake(40, 100, 200, 200))
         
         
     }

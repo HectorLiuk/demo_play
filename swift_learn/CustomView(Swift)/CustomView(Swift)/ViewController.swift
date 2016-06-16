@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.addSubview(backImageView)
+        view.addSubview(backImageView)
         UIView.animateWithDuration(10) { () -> Void in
             
         }
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         
         
         
-        TestViewController.someTypeMethod()
+//        TestViewController.someTypeMethod()
         
         
     }
