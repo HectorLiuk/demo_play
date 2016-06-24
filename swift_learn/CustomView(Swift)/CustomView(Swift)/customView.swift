@@ -19,11 +19,11 @@ class customView: UIView {
             titleLabel.text = title
         }
     }
-    
+    var detail = String()
     //block
     var operationBlock: ((str:String) -> Void)?
     
-    private lazy var view: UIView = {
+    private  lazy var view: UIView = {
         let view = NSBundle.mainBundle().loadNibNamed("customView", owner: self, options: nil)[0]as!UIView
         return view
     }()

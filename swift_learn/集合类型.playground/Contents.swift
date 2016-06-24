@@ -4,6 +4,7 @@ import UIKit
 
 var str = "集合类型"
 
+
 var array1 = [Int]()
 
     array1.append(3)
@@ -39,12 +40,30 @@ for (index,value) in heArray.enumerate(){
 //创建字典
 var dic0 = [:]
 
-var dic1 = [Int:String]()
+
+
+var dic1 = [String:String]()
 
 var dic2 : [String:String] = ["1":"xxx","2":"qqq"]
     dic2["1"]
+print(dic2["0"])
+if dic2["0"] == nil{
+    
+}else{
+    print("不空")
+}
+var ss : String?
+
+if ss != nil {
+    print("不空")
+
+}
+var  sss = "ss"
 
 
+
+print(dic0)
+print(dic1)
 
 
 
