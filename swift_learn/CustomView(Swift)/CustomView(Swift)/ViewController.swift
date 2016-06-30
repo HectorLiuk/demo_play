@@ -28,15 +28,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(backImageView)
-//        UIView.animateWithDuration(10) { () -> Void in
-//            
-//        }
-//        backImageView.operationBlock = {(str) -> Void in
-//            let oo = Int()
-//            print(String(oo)+"11111"+str)
-//            print(self,self.view,oo)
-//            
-//        }
+        UIView.animateWithDuration(10) { () -> Void in
+            
+        }
+        backImageView.operationBlock = {(str) -> Void in
+            let oo = Int()
+            print(String(oo)+"11111"+str)
+            print(self,self.view,oo)
+            
+        }
 
 //        //使用正常创建控件
         let ImageView = customView()
