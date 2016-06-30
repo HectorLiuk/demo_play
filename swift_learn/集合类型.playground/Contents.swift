@@ -66,5 +66,41 @@ print(dic0)
 print(dic1)
 
 
+//setter 方法
+class StepCounter {
+    var totalSteps: Int = 0 {
+        
+        willSet(newTotalSteps) {
+            print("About to set totalSteps to \(newTotalSteps)")
+        }
+        didSet {
+            if totalSteps > oldValue  {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+
+    }
+}
+
+var peopleCount = StepCounter()
+peopleCount.totalSteps = 200
+
+
+struct Point {
+    var x = 0.0, y = 0.0
+    func isToTheRightOfX(x: Double) -> Bool {
+        print(x)
+        print(self.x)
+        return self.x > x
+    }
+}
+let somePoint = Point(x: 4.0, y: 5.0)
+if somePoint.isToTheRightOfX(1.0) {
+    print("This point is to the right of the line where x == 1.0")
+}
+
+
+
+
 
 
