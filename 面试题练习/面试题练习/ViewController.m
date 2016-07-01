@@ -8,17 +8,27 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface Student()
+@property (nonatomic, copy) NSString *name;
+@end
+@implementation Student
 
+
+
+@end
+
+
+@interface ViewController ()
+@property (nonatomic, strong) Student *students;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self blockOutsideVar];
+//    [self blockOutsideVar];
     
-    
+    [self Observer];
 }
 //38题 在block内如何修改block外部变量
 - (void)blockOutsideVar{
@@ -32,8 +42,24 @@
     NSLog(@"\n 定以后：------------------------------------ a指向的堆中地址：%p；a在栈中的指针地址：%p  a值= %@", a, &a,a);
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+//46 如何手动触发一个value的KVO
+- (void)Observer{
+    self.students = [[Student alloc] init];
+    //添加观察者
+    [self.students addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew  context:@"nameStr"];
+    self.students.name = @"sss";
 
+    
+}
+- (IBAction)obsverveClick:(id)sender {
+    self.students.name = @"wwww";
+}
+//观察者监控触发方法
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    
+}
+//移除通知
+- (void)dealloc{
+    [self.students removeObserver:self forKeyPath:@"name"];
+}
 @end

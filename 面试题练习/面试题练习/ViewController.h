@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@interface Student : NSObject
+
+@end
+
+
 @interface ViewController : UIViewController
 
 
