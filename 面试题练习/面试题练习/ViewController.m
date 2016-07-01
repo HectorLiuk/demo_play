@@ -76,14 +76,13 @@
 - (void)performSelectorTest{
     NSString *addSelector = @"add";
     SEL add = NSSelectorFromString(addSelector);
+    
     if ([self respondsToSelector:add]) {
         [self performSelector:add];
-
     }
 }
 - (void)add{
     NSLog(@"我是+方法");
 }
-
 
 @end
