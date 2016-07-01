@@ -31,7 +31,8 @@
     
 //    [self Observer];
     
-    [self performSelectorTest];
+//    [self performSelectorTest];
+   
 }
 
 

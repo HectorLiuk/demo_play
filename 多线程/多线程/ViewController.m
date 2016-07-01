@@ -19,13 +19,25 @@
     [super viewDidLoad];
     
     
+    NSLog(@"1%@",[NSThread currentThread]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"2%@",[NSThread currentThread]);
+    });
+    dispatch_queue_t queue1 = dispatch_queue_create("tk.bourne.testQueue", DISPATCH_QUEUE_SERIAL);
+
+    dispatch_async(queue1, ^{
+        NSLog(@"3%@",[NSThread currentThread]);
+
+    });
     
     
+    dispatch_sync(queue1, ^{
+        NSLog(@"4%@",[NSThread currentThread]);
+        
+    });
     
     
-    
-    
-    
+    NSLog(@"5xxx");
     
     
     
@@ -43,18 +55,18 @@
     //    [self group];
     
     //3.2.主队列执行8次循环
-    [NSThread sleepForTimeInterval:2.0f];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        for (NSInteger i = 0; i < 8; i++) {
-            NSLog(@"group-02 - %@", [NSThread currentThread]);
-        }
-    });
-    
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        NSLog(@"2222xxxx");
-    });
-    NSLog(@"xxxxxx");
+//    [NSThread sleepForTimeInterval:2.0f];
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        for (NSInteger i = 0; i < 8; i++) {
+//            NSLog(@"group-02 - %@", [NSThread currentThread]);
+//        }
+//    });
+//    
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        NSLog(@"2222xxxx");
+//    });
+//    NSLog(@"xxxxxx");
     
 }
 
@@ -76,7 +88,7 @@
     dispatch_queue_t queue = dispatch_queue_create("tk.bourne.testQueue", NULL);
     dispatch_queue_t queue1 = dispatch_queue_create("tk.bourne.testQueue", DISPATCH_QUEUE_SERIAL);
     
-    
+
     //并行队列
     dispatch_queue_t queue2 = dispatch_queue_create("tk.bourne.testQueue", DISPATCH_QUEUE_CONCURRENT);
     

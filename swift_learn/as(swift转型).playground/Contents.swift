@@ -22,6 +22,7 @@ class Song: MediaItem {
     init(name: String, artist: String) {
         self.artist = artist
         super.init(name: name)
+
     }
     //泛型定义方法
     func swapTwoValues<T>(inout a : T,inout _ b : T ){
