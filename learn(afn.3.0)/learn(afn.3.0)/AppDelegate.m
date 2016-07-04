@@ -1,13 +1,13 @@
 //
 //  AppDelegate.m
-//  面试题练习
+//  learn(afn.3.0)
 //
-//  Created by lk on 16/7/1.
+//  Created by lk on 16/7/4.
 //  Copyright © 2016年 LK. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,8 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-
     // Override point for customization after application launch.
     return YES;
 }

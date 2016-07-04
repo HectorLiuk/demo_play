@@ -1,21 +1,15 @@
 //
 //  ViewController.h
-//  面试题练习
+//  learn(afn.3.0)
 //
-//  Created by lk on 16/7/1.
+//  Created by lk on 16/7/4.
 //  Copyright © 2016年 LK. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface Student : NSObject
-
-@end
-
-
 @interface ViewController : UIViewController
 
-@property (nonatomic, copy) NSString *nameStr;
 
 @end
 
