@@ -10,4 +10,5 @@
 
 @interface Student : NSObject
 @property (nonatomic, assign) int count;
+@property (nonatomic, copy) NSString *name;
 @end

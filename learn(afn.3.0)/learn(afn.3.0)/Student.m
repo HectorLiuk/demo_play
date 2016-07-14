@@ -9,8 +9,10 @@
 #import "Student.h"
 
 @implementation Student
-+ (BOOL)automaticallyNotifiesObserversForLComponent;
-{
+
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    
+    
     return NO;
 }
 
@@ -22,7 +24,12 @@
     
     
 }
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(__unused id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context{
+    
+
     
 }
 @end
