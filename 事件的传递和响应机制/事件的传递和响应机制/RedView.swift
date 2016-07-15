@@ -8,6 +8,22 @@
 
 import UIKit
 
+class WhiteView: UIView{
+    
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+        return self.subviews[0]
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("这是WhiteView")
+    }
+    
+    
+}
+
+
+
+
 class RedView: UIView {
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -31,12 +47,23 @@ class RedView: UIView {
     }
     
     //撞击触发事件
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        return self
-    }
+//    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+//        return self
+//    }
 
 
 }
 
 
-
+class GreenView: UIView{
+    
+//    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+//        return self
+//    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("这是GreenView")
+    }
+    
+    
+}
