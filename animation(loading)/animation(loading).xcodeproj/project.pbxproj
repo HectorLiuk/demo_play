@@ -18,6 +18,7 @@
 		4A70D8AB1D3DCC25006C2110 /* CircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A70D8AA1D3DCC25006C2110 /* CircleLayer.swift */; };
 		4A70D8AD1D3DFF63006C2110 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A70D8AC1D3DFF63006C2110 /* TriangleLayer.swift */; };
 		4A70D8B51D3E2B7C006C2110 /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A70D8B41D3E2B7C006C2110 /* LineLayer.swift */; };
+		4A70D8B71D3E74CB006C2110 /* WaveLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A70D8B61D3E74CB006C2110 /* WaveLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4A70D8AA1D3DCC25006C2110 /* CircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLayer.swift; sourceTree = "<group>"; };
 		4A70D8AC1D3DFF63006C2110 /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
 		4A70D8B41D3E2B7C006C2110 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
+		4A70D8B61D3E74CB006C2110 /* WaveLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				4A70D8AA1D3DCC25006C2110 /* CircleLayer.swift */,
 				4A70D8AC1D3DFF63006C2110 /* TriangleLayer.swift */,
 				4A70D8B41D3E2B7C006C2110 /* LineLayer.swift */,
+				4A70D8B61D3E74CB006C2110 /* WaveLayer.swift */,
 			);
 			path = layers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A70D8A81D3DC971006C2110 /* AnimationView.swift in Sources */,
+				4A70D8B71D3E74CB006C2110 /* WaveLayer.swift in Sources */,
 				4A70D8B51D3E2B7C006C2110 /* LineLayer.swift in Sources */,
 				4A70D8AD1D3DFF63006C2110 /* TriangleLayer.swift in Sources */,
 				4A70D87C1D3DC929006C2110 /* ViewController.swift in Sources */,
@@ -508,6 +512,7 @@
 				4A70D8A01D3DC929006C2110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A70D8A11D3DC929006C2110 /* Build configuration list for PBXNativeTarget "animation(loading)Tests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +521,7 @@
 				4A70D8A31D3DC929006C2110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A70D8A41D3DC929006C2110 /* Build configuration list for PBXNativeTarget "animation(loading)UITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +530,7 @@
 				4A70D8A61D3DC929006C2110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -22,6 +22,9 @@ class AnimationView: UIView {
     
     let rightLineLayerRed = RightLineLayer()
     
+    let waveLayer = WaveLayer()
+    
+    
     
     
     override init(frame: CGRect) {
@@ -62,7 +65,7 @@ class AnimationView: UIView {
     }
     
     /**
-     三角形凸起
+     3 三角形凸起
      */
     func triangleAnimationLayer() {
         triangleLayer.trangleGroupAnimation()
@@ -71,34 +74,62 @@ class AnimationView: UIView {
     }
     
     /**
-     旋转视图 消失圆
+     4 旋转视图 消失圆
      */
     func transformAnimation() {
         layer.anchorPoint = CGPoint(x: 0.5, y: 0.65) //设置锚点 围绕此点旋转
         layer.addAnimation(triangleLayer.transformRotationZ(), forKey: nil)
         circleLayer.contract()
-        NSTimer.scheduledTimerWithTimeInterval(0.9, target: self, selector: #selector(addLineLayer), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.9, target: self, selector: #selector(addBottomToTopLineLayer), userInfo: nil, repeats: false)
     }
     
-    func addLineLayer() {
+    /**
+     5 添加自下到上 线动画
+     */
+    func addBottomToTopLineLayer() {
         layer.addSublayer(leftLineLayer)
         leftLineLayer.bottomToTopAnimation(UIColor.cyanColor(), fromValue: 0, toValue: 1, keyPath:"strokeEnd")
         layer.addSublayer(rightLineLayer)
         rightLineLayer.bottomToTopAnimation(UIColor.cyanColor(), fromValue: 0, toValue: 1, keyPath:"strokeEnd")
         
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(dismssLineLayer), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(addTopToBottomLineLayer), userInfo: nil, repeats: false)
     }
     
-    func dismssLineLayer() {
-        
+    /**
+     6 添加自上而下 线动画
+     */
+    func addTopToBottomLineLayer() {
         layer.addSublayer(leftLineLayerRed)
         leftLineLayerRed.bottomToTopAnimation(UIColor.orangeColor(), fromValue: 1, toValue: 0,keyPath:"strokeStart")
 
         layer.addSublayer(rightLineLayerRed)
         rightLineLayerRed.bottomToTopAnimation(UIColor.orangeColor(), fromValue: 1, toValue: 0,keyPath:"strokeStart")
         
-
-
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(waveAnimation), userInfo: nil, repeats: false)
+    }
+    
+    /**
+     7 水波纹动画效果
+     */
+    func waveAnimation() {
+        layer.addSublayer(waveLayer)
+        waveLayer.animate()
+        
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(expendView), userInfo: nil, repeats: false)
+    }
+    
+    func expendView() {
+        backgroundColor = UIColor.orangeColor()
+        center = CGPoint(x: UIScreen.mainScreen().bounds.size.width/2 , y: UIScreen.mainScreen().bounds.size.height/2)
+        
+        layer.sublayers = nil
+        
+        UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { 
+            self.frame = UIScreen.mainScreen().bounds
+            }) { (finished) in
+                
+        }
+        
     }
     
 }
