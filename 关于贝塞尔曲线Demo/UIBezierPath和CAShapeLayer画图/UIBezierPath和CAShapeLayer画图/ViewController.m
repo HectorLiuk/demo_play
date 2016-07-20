@@ -160,8 +160,8 @@ typedef NS_OPTIONS(NSInteger, AnimationType){
     //贝塞尔曲线的画法是由起点、终点、控制点三个参数来画的，为了解释清楚这个点，我写了几行代码来解释它
     CGPoint startPoint   = CGPointMake(50, 70);
     CGPoint endPoint     = CGPointMake(300, 70);
-    CGPoint controlPoint1 = CGPointMake(112.5, 10);
-    CGPoint controlPoint2 = CGPointMake(237.5, 130);
+    CGPoint controlPoint1 = CGPointMake(112.5, 10); //控制第一个曲线高点
+    CGPoint controlPoint2 = CGPointMake(237.5, 130); //控制第二个曲线高点
     
     CALayer *layer1 = [CALayer layer];
     layer1.frame = CGRectMake(startPoint.x, startPoint.y, 5, 5);
