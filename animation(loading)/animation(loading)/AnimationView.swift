@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol AnimationDelegate: class {
+    func completeAnimation()
+}
+
+
 class AnimationView: UIView {
 
     let circleLayer = CircleLayer()
@@ -24,7 +29,7 @@ class AnimationView: UIView {
     
     let waveLayer = WaveLayer()
     
-    
+    weak var delegate: AnimationDelegate?
     
     
     override init(frame: CGRect) {
@@ -118,6 +123,9 @@ class AnimationView: UIView {
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(expendView), userInfo: nil, repeats: false)
     }
     
+    /**
+     8 弹出 视图
+     */
     func expendView() {
         backgroundColor = UIColor.orangeColor()
         center = CGPoint(x: UIScreen.mainScreen().bounds.size.width/2 , y: UIScreen.mainScreen().bounds.size.height/2)
@@ -127,7 +135,7 @@ class AnimationView: UIView {
         UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { 
             self.frame = UIScreen.mainScreen().bounds
             }) { (finished) in
-                
+                self.delegate?.completeAnimation()
         }
         
     }

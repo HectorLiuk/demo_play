@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , AnimationDelegate{
 
     lazy var animationView : AnimationView = {
         let animationView = AnimationView()
         animationView.frame.size = CGSize(width: 100, height: 100)
         animationView.center = self.view.center
+        animationView.delegate = self
         return animationView
     }()
     
@@ -34,3 +35,9 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController {
+    func completeAnimation(){
+        
+    }
+    
+}
