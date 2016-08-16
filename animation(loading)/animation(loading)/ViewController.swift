@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController , AnimationDelegate{
+class ViewController: UIViewController {
 
     lazy var animationView : AnimationView = {
         let animationView = AnimationView()
@@ -35,7 +35,7 @@ class ViewController: UIViewController , AnimationDelegate{
 
 }
 
-extension ViewController {
+extension ViewController : AnimationDelegate{
     func completeAnimation(){
         
     }
