@@ -18,6 +18,8 @@ typedef void (^parameterBlock)();
 @protocol blockDelegate;
 
 @interface block : UIView
+@property (nonatomic, copy) void(^ sendMsgBlock)();
+
 @property (nonatomic, copy) voidBlock voidBlock;
 @property (nonatomic, copy) intBlock intBlock;
 @property (nonatomic, copy) parameterBlock parameterBlock;
