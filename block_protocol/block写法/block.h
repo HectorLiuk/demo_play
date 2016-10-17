@@ -33,6 +33,8 @@ typedef void (^parameterBlock)();
 //协议
 @property (nonatomic, weak) id<blockDelegate> delegate;
 
+- (int)operationOne:(int)one two:(int)two returnCom:(int (^)(int a , int b))returnCom;
+- (BOOL)parameterOne:(int)one two:(int)two returnCom:(BOOL (^)(int i ,int j))returnCom;
 @end
 
 @protocol blockDelegate <NSObject>

@@ -10,8 +10,21 @@
 
 @implementation block
 
+//-(NSString *)AFNetWork:(NSString *)name withComplatedRetunStr:(NSString *(^)(NSString * names,NSString * school))complated {
+//    NSLog(@"----函数中打印带参数有返回值-%@",name);
+//    if (complated) {
+//    }
+//    return complated(name,@"军事博物馆");
+//;
+//}
 
+- (int)operationOne:(int)one two:(int)two returnCom:(int (^)(int one , int two))returnCom{
+    return returnCom(one, two);
+}
 
+- (BOOL)parameterOne:(int)one two:(int)two returnCom:(BOOL (^)(int i ,int j))returnCom{
+    return returnCom(one, two);
+}
 
 //系统block写法
 - (void)popBlock:(void (^)(int i))block{

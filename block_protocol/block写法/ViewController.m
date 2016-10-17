@@ -48,7 +48,17 @@
     bView.delegate = self;
     
     
+   int i = [bView operationOne:1 two:10 returnCom:^int(int a, int b) {
+       NSLog(@"a=%d,b=%d",a,b);
+       return a + b;
+   }];
     
+    NSLog(@"%d",i);
+    
+    BOOL bo = [bView parameterOne:30 two:20 returnCom:^BOOL(int i, int j) {
+        return i > j ? YES : NO;
+    }];
+    NSLog(@"Bool = %d",bo);
 }
 
 - (void)delegateValue:(block *)block{
