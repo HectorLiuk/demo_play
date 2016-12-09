@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "block.h"
+#import "blockTheory.h"
 @interface ViewController ()<blockDelegate>
 
 @end
@@ -59,6 +60,11 @@
         return i > j ? YES : NO;
     }];
     NSLog(@"Bool = %d",bo);
+    
+    NSLog(@"```````````````````````");
+    blockTheory *block = [[blockTheory alloc] init];
+    [block blockTheory];
+    
 }
 
 - (void)delegateValue:(block *)block{

@@ -16,6 +16,7 @@
 		4A53E7BE1CB39FBE004BCAAD /* block__Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53E7BD1CB39FBE004BCAAD /* block__Tests.m */; };
 		4A53E7C91CB39FBE004BCAAD /* block__UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53E7C81CB39FBE004BCAAD /* block__UITests.m */; };
 		4A53E7D81CB39FD8004BCAAD /* block.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53E7D71CB39FD8004BCAAD /* block.m */; };
+		C4E9E2F21DFAA4C000D4C0C7 /* blockTheory.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E9E2F11DFAA4C000D4C0C7 /* blockTheory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		4A53E7CA1CB39FBE004BCAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A53E7D61CB39FD8004BCAAD /* block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = block.h; sourceTree = "<group>"; };
 		4A53E7D71CB39FD8004BCAAD /* block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = block.m; sourceTree = "<group>"; };
+		C4E9E2F01DFAA4C000D4C0C7 /* blockTheory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blockTheory.h; sourceTree = "<group>"; };
+		C4E9E2F11DFAA4C000D4C0C7 /* blockTheory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blockTheory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				4A53E7AA1CB39FBE004BCAAD /* ViewController.m */,
 				4A53E7D61CB39FD8004BCAAD /* block.h */,
 				4A53E7D71CB39FD8004BCAAD /* block.m */,
+				C4E9E2F01DFAA4C000D4C0C7 /* blockTheory.h */,
+				C4E9E2F11DFAA4C000D4C0C7 /* blockTheory.m */,
 				4A53E7AC1CB39FBE004BCAAD /* Main.storyboard */,
 				4A53E7AF1CB39FBE004BCAAD /* Assets.xcassets */,
 				4A53E7B11CB39FBE004BCAAD /* LaunchScreen.storyboard */,
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E9E2F21DFAA4C000D4C0C7 /* blockTheory.m in Sources */,
 				4A53E7AB1CB39FBE004BCAAD /* ViewController.m in Sources */,
 				4A53E7D81CB39FD8004BCAAD /* block.m in Sources */,
 				4A53E7A81CB39FBE004BCAAD /* AppDelegate.m in Sources */,
@@ -504,6 +510,7 @@
 				4A53E7CF1CB39FBE004BCAAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A53E7D01CB39FBE004BCAAD /* Build configuration list for PBXNativeTarget "block写法Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +519,7 @@
 				4A53E7D21CB39FBE004BCAAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A53E7D31CB39FBE004BCAAD /* Build configuration list for PBXNativeTarget "block写法UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +528,7 @@
 				4A53E7D51CB39FBE004BCAAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
