@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
     block *bView = [block new];
     
 //回调 两种写法
