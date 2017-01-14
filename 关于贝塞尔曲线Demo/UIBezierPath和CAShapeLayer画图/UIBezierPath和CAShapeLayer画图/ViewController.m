@@ -31,6 +31,9 @@ typedef NS_OPTIONS(NSInteger, AnimationType){
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
